@@ -11,17 +11,19 @@ function onLoginSubmit(tomato) {
     const username = LoginInput.value;
     localStorage.setItem(USERNAME_KEY, username);
     LoginForm.classList.add(HIDDEN_CLASSNAME);
-    greeting.innerText = `Hello ${username} !`; // not '' or "" but only `` !!!!! mac : ₩
-    greeting.classList.remove(HIDDEN_CLASSNAME);
-    console.log(username);
+    paintGreetings(username);
 } 
 
-const savedUSername = localStorage.getItem(USERNAME_KEY);
+function paintGreetings(username) {
+    greeting.innerText = `Hello ${username} !`; // not '' or "" but only `` !!!!! mac : ₩
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
 
-if(savedUSername === null) {
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if(savedUsername === null) {
     LoginForm.classList.remove(HIDDEN_CLASSNAME);
     LoginForm.addEventListener("submit", onLoginSubmit);
 } else {
-    greeting.classList.remove(HIDDEN_CLASSNAME);
-    greeting.innerText = `Hello ${savedUSername} !`;
+    paintGreetings(savedUsername)
 }
