@@ -8,8 +8,9 @@ const HIDDEN_CLASSNAME = "hidden";
 function onLoginSubmit(tomato) {
     tomato.preventDefault();
     const username = LoginInput.value;
+    localStorage.setItem("username", username);
     LoginForm.classList.add(HIDDEN_CLASSNAME);
-    greeting.innerText = `Hello ${username} !`; // not '' or "" but only `` !!!!!
+    greeting.innerText = `Hello ${username} !`; // not '' or "" but only `` !!!!! mac : ₩
     greeting.classList.remove(HIDDEN_CLASSNAME);
     console.log(username);
 } 
