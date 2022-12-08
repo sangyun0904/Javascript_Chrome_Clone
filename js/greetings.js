@@ -15,7 +15,7 @@ function onLoginSubmit(tomato) {
 } 
 
 function paintGreetings(username) {
-    greeting.innerText = `Hello ${username} !`; // not '' or "" but only `` !!!!! mac : ₩
+    greeting.innerText = `Hello ${username}`; // not '' or "" but only `` !!!!! mac : ₩
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
